@@ -26,6 +26,10 @@ module.exports = () => {
             require('./cmds/help')(args)
             break
 
+        case 'forecast':
+            require('./cmds/forecast')(args)
+            break
+
         default:
             console.error(`"${cmd}" is not a valid command!`)
             break

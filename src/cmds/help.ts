@@ -1,5 +1,5 @@
 const menus = {
-    main: `
+  main: `
     outside [command] <options>
 
     today .............. show weather for today
@@ -7,21 +7,19 @@ const menus = {
     version ............ show package version
     help ............... show help menu for a command`,
 
-    today: `
+  today: `
     outside today <options>
 
     --location, -l ..... the location to use`,
 
-    forecast: `
+  forecast: `
     outside forecast <options>
 
     --location, -l ..... the location to use`,
-}
+};
 
-module.exports = (args) => {
-    const subCmd = args._[0] === 'help'
-        ? args._[1]
-        : args._[0]
+export function help(args) {
+  const subCmd = args._[0] === 'help' ? args._[1] : args._[0];
 
-    console.log(menus[subCmd] || menus.main)
+  console.log(menus[subCmd] || menus.main);
 }
